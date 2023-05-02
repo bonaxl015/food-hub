@@ -32,6 +32,8 @@
       "sourceExts": [
         "js",
         "jsx",
+        "ts",
+        "tsx",
         "scss",
         "sass"
       ]

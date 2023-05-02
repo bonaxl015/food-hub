@@ -4,23 +4,13 @@ module.exports = (async () => {
   const {
     resolver: { sourceExts, assetExts }
   } = await getDefaultConfig()
+
   return {
     transformer: {
-      babelTransformerPath: require.resolve('react-native-sass-transformer')
+      babelTransformerPath: require.resolve('./customTransformer.js')
     },
     resolver: {
-      assetExts: [
-        ...assetExts,
-        'png',
-        'jpg',
-        'jpeg',
-        'gif',
-        'svg',
-        'ttf',
-        'otf',
-        'woff',
-        'woff2',
-      ],
+      assetExts: assetExts.filter(ext => ext !== "svg" && ext!=="scss"),
       sourceExts: [
         ...sourceExts,
         'cjs',
@@ -28,6 +18,7 @@ module.exports = (async () => {
         'tsx',
         'ts',
         'json',
+        'svg',
         'scss',
         'sass'
       ]

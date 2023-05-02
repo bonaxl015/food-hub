@@ -1,5 +1,5 @@
 module.exports = function(api) {
-  api.cache(true);
+  api.cache(true)
   return {
     presets: ['babel-preset-expo'],
     env: {
@@ -11,18 +11,19 @@ module.exports = function(api) {
       [
         'module-resolver',
         {
+          root: ['./'],
+          alias: {
+            '@': './src'
+          },
           extensions: [
             '.js',
             '.jsx',
             '.ts',
             '.tsx',
             '.json',
-            '.scss'
-          ],
-          root: ['./src'],
-          alias: {
-            '@': './src'
-          }
+            '.scss',
+            '.sass'
+          ]
         }
       ]
     ]
