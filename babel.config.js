@@ -25,7 +25,8 @@ module.exports = function(api) {
             '.sass'
           ]
         }
-      ]
+      ],
+      ['nativewind/babel']
     ]
   }
 }
