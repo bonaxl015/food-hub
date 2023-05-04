@@ -1,4 +1,4 @@
-/// <reference types="nativewind/types" />
+/// <reference types="./node_modules/nativewind/types.d.ts" />
 
 declare module '*.jpg'
 declare module '*.png'
