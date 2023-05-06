@@ -92,7 +92,7 @@ const WelcomePage = (props: any) => {
                   Start with email or phone
                 </Text>
               </TouchableOpacity>
-              <View className="m-[14px] flex flex-row gap-[8px] justify-center">
+              <View className="flex flex-row gap-x-[8px] m-[14px] justify-center">
                 <Text className="text-[#fff]">
                   Already have an account?
                 </Text>
