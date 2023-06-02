@@ -4,8 +4,10 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  StyleSheet
 } from 'react-native'
+import { mainColor, light, dark } from '@/styles/colors'
 
 const Categories = (props: any) => {
   const { data, filterCategories } = props
@@ -15,6 +17,27 @@ const Categories = (props: any) => {
     setIndexClick(index)
     filterCategories(item)
   }
+
+  const styles = StyleSheet.create({
+    activeBg: {
+      backgroundColor: mainColor
+    },
+    notActiveBg: {
+      backgroundColor: light
+    },
+    activeText: {
+      color: light
+    },
+    notActiveText: {
+      color: dark
+    },
+    noMargin: {
+      marginRight: 0
+    },
+    addMargin: {
+      marginRight: 10
+    },
+  })
 
   return (
     <ScrollView
@@ -31,8 +54,12 @@ const Categories = (props: any) => {
           <View
             className="h-[98px] w-[60px] p-[5px] rounded-[30px] border-[1px] border-[#d6d6d6]"
             style={{
-              backgroundColor: indexClick === index ? '#fe724c' : '#fff',
-              marginRight: index === data.length - 1 ? 0 : 10
+              ...indexClick === index
+                ? styles.activeBg
+                : styles.notActiveBg,
+              ...index === data.length - 1
+                ? styles.noMargin
+                : styles.addMargin
             }}
           >
             <Image
@@ -41,9 +68,10 @@ const Categories = (props: any) => {
             />
             <Text
               className="text-center text-[12px]"
-              style={{
-                color: indexClick === index ? '#fff' : '#000',
-              }}
+              style={indexClick === index
+                ? styles.activeText
+                : styles.notActiveText
+              }
             >
               {item.category}
             </Text>
