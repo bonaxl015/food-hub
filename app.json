@@ -33,9 +33,7 @@
         "js",
         "jsx",
         "ts",
-        "tsx",
-        "scss",
-        "sass"
+        "tsx"
       ]
     },
     "extra": {

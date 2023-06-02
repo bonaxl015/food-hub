@@ -10,7 +10,7 @@ module.exports = (async () => {
       babelTransformerPath: require.resolve('./customTransformer.js')
     },
     resolver: {
-      assetExts: assetExts.filter(ext => ext !== "svg" && ext!=="scss"),
+      assetExts: assetExts.filter(ext => ext !== "svg"),
       sourceExts: [
         ...sourceExts,
         'cjs',
@@ -18,9 +18,7 @@ module.exports = (async () => {
         'tsx',
         'ts',
         'json',
-        'svg',
-        'scss',
-        'sass'
+        'svg'
       ]
     }
   }

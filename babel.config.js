@@ -20,9 +20,7 @@ module.exports = function(api) {
             '.jsx',
             '.ts',
             '.tsx',
-            '.json',
-            '.scss',
-            '.sass'
+            '.json'
           ]
         }
       ],
