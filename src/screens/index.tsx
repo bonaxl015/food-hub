@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as SplashScreen from 'expo-splash-screen'
@@ -6,6 +7,7 @@ import {
   Provider as PaperProvider
 } from 'react-native-paper'
 import routes from '@/routes'
+import { mainColor } from '@/styles/colors'
 
 const Stack = createNativeStackNavigator()
 SplashScreen.preventAutoHideAsync()
@@ -17,7 +19,7 @@ setTimeout(() => {
 const theme = {
   ...DefaultTheme,
   colors: {
-    primary: '#fe724c'
+    primary: mainColor
   }
 }
 

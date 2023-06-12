@@ -3,8 +3,12 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import User from '@/assets/user.png'
 
-const Header = () => {
-  const openSideMenu = () => console.log('menu')
+interface HeaderProps {
+  navigation: any
+}
+
+const Header: React.FC<HeaderProps> = ({ navigation }) => {
+  const openSideMenu = () => navigation.openDrawer()
 
   return (
     <View className="flex flex-row items-center justify-between h-[80px] pt-[10px]">

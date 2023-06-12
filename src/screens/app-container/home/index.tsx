@@ -8,7 +8,11 @@ import Popular from './components/popular'
 import { categories } from './data/categories'
 import { featured } from './data/featured'
 
-const Home = () => {
+interface HomeScreenProps {
+  navigation: any
+}
+
+const Home: React.FC<HomeScreenProps> = ({ navigation }) => {
   const [featuredData, setFeaturedData] = useState(featured)
 
   const filterCategories = (data: any) => {
@@ -19,30 +23,32 @@ const Home = () => {
   }
 
   return (
-    <ScrollView
-      className="mx-[16px]"
-      showsVerticalScrollIndicator={false}
-      showsHorizontalScrollIndicator={false}
-    >
-      <Header />
-      <Text className="mt-[8px] mb-[16px] w-[300px] text-[28px] font-bold">
-        What would you like to order
-      </Text>
-      <TextInput
-        mode="outlined"
-        outlineColor="#9aa0b4"
-        placeholder="Find for food or restaurant"
-        left={
-          <TextInput.Icon icon="magnify" />
-        }
-      />
-      <Categories
-        data={categories}
-        filterCategories={filterCategories}
-      />
-      <Featured featuredData={featuredData} />
-      <Popular />
-    </ScrollView>
+    <>
+      <ScrollView
+        className="mx-[16px]"
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+      >
+        <Header navigation={navigation} />
+        <Text className="mt-[8px] mb-[16px] w-[300px] text-[28px] font-bold">
+          What would you like to order
+        </Text>
+        <TextInput
+          mode="outlined"
+          outlineColor="#9aa0b4"
+          placeholder="Find for food or restaurant"
+          left={
+            <TextInput.Icon icon="magnify" />
+          }
+        />
+        <Categories
+          data={categories}
+          filterCategories={filterCategories}
+        />
+        <Featured featuredData={featuredData} />
+        <Popular />
+      </ScrollView>
+    </>
   )
 }
 
